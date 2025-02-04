@@ -7,7 +7,7 @@ export default function Navbar() {
     <nav className="border-b bg-white">
       <div className="container flex items-center h-16 gap-4">
         <div className="flex-1 flex items-center gap-4">
-          <h1 className="text-xl font-bold text-primary">Nexus</h1>
+          <h1 className="text-xl font-bold text-primary">MetaMind</h1>
           <div className="max-w-md flex-1 relative">
             <Search className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 h-4 w-4" />
             <Input className="w-full pl-10" placeholder="Search communities and posts..." />
