@@ -34,6 +34,5 @@ export function AnimatedWords() {
         {words[currentIndex]}
       </div>
     </div>
-  </div>
   );
 }
