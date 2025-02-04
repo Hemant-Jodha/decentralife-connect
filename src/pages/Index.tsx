@@ -2,6 +2,7 @@ import MainLayout from "@/components/layout/MainLayout";
 import CreatePost from "@/components/posts/CreatePost";
 import PostList from "@/components/posts/PostList";
 import CommunityCard from "@/components/communities/CommunityCard";
+import { AnimatedWords } from "@/components/ui/animated-words";
 
 const TRENDING_COMMUNITIES = [
   {
@@ -29,6 +30,10 @@ export default function Index() {
           {TRENDING_COMMUNITIES.map((community) => (
             <CommunityCard key={community.name} {...community} />
           ))}
+          <div className="mt-8">
+            <h2 className="font-semibold text-lg mb-4">Trending Concepts</h2>
+            <AnimatedWords />
+          </div>
         </div>
       </div>
     </MainLayout>
