@@ -5,12 +5,10 @@ import AppSidebar from "./AppSidebar";
 export default function MainLayout({ children }: { children: React.ReactNode }) {
   return (
     <SidebarProvider>
-      <div className="min-h-screen flex w-full bg-gray-50">
+      <div className="min-h-screen flex flex-col w-full bg-gray-50">
+        <Navbar />
         <AppSidebar />
-        <div className="flex-1">
-          <Navbar />
-          <main className="container py-6">{children}</main>
-        </div>
+        <main className="container py-6">{children}</main>
       </div>
     </SidebarProvider>
   );
