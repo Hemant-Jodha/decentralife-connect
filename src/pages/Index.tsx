@@ -1,14 +1,36 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+import MainLayout from "@/components/layout/MainLayout";
+import CreatePost from "@/components/posts/CreatePost";
+import PostList from "@/components/posts/PostList";
+import CommunityCard from "@/components/communities/CommunityCard";
 
-const Index = () => {
+const TRENDING_COMMUNITIES = [
+  {
+    name: "technology",
+    description: "The latest in tech news and discussions about the future of technology.",
+    members: 125000,
+  },
+  {
+    name: "science",
+    description: "A community dedicated to science news and scientific discussion.",
+    members: 98000,
+  },
+];
+
+export default function Index() {
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-100">
-      <div className="text-center">
-        <h1 className="text-4xl font-bold mb-4">Welcome to Your Blank App</h1>
-        <p className="text-xl text-gray-600">Start building your amazing project here!</p>
+    <MainLayout>
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+        <div className="lg:col-span-2">
+          <CreatePost />
+          <PostList />
+        </div>
+        <div className="space-y-4">
+          <h2 className="font-semibold text-lg">Trending Communities</h2>
+          {TRENDING_COMMUNITIES.map((community) => (
+            <CommunityCard key={community.name} {...community} />
+          ))}
+        </div>
       </div>
-    </div>
+    </MainLayout>
   );
-};
-
-export default Index;
+}
